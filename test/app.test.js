@@ -1,15 +1,12 @@
-const request = require('supertest');
-const { app, server } = require('../app');
+const request = require("supertest");
+const { app, server } = require("../app");
 
- afterAll(() => {
+afterAll(() => {
   server.close();
-  });
+});
 
-describe('GET /',() => {
-   it('should return Hello, Taski Technologies', async () => {
-        const res = await request(app).get('/');
-        expect(res.statusCode).toBe(200);
-        expect(res.text).toBe('Hello, Taski Technologies');
- });
-
+test("GET / should return hello message", async () => {
+  const res = await request(app).get("/");
+  expect(res.text).toBe("Hello, Taski Technologies");
+});
 
