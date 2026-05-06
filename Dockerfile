@@ -4,4 +4,4 @@ COPY package*.json ./
 RUN npm install
 COPY . .
 EXPOSE 3000
-CMD ["node","app.js","npm", "start"]
+CMD ["node", "app.js"]
