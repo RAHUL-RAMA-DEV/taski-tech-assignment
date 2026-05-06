@@ -8,3 +8,8 @@ describe('GET /',() => {
         expect(res.text).toBe('Hello, Taski Technologies');
  });
 });
+const server = require("../app");
+
+afterAll(() => {
+  server.close();
+});
