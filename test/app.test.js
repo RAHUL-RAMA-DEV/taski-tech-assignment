@@ -1,12 +1,8 @@
+
 const request = require("supertest");
-const { app, server } = require("../app");
+const app = require("../app");
 
-afterAll(() => {
-  server.close();
-});
-
-test("GET / should return hello message", async () => {
+test("GET / should return message", async () => {
   const res = await request(app).get("/");
   expect(res.text).toBe("Hello, Taski Technologies");
 });
-
