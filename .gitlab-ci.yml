@@ -7,9 +7,6 @@ stages:
 variables:
   NODE_ENV: test
 
-before_script:
-  - npm install
-
 lint:
   image: node:18
   stage: lint
