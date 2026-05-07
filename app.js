@@ -1,12 +1,15 @@
 const express = require("express");
+
 const app = express();
 
-app.get("/",(req,res) => {
-   res.send("Hello, Taski Technologies");
+// Home route
+app.get("/", (req, res) => {
+  res.send("Hello, Taski Technologies");
 });
 
-const server = app.listen(3000, () => {
+// Start server
+app.listen(3000, () => {
   console.log("server running on port 3000");
 });
 
-module.exports =  app; 
+module.exports = app;
