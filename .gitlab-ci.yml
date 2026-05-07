@@ -3,6 +3,7 @@ stages:
   - test
   - integration
   - build
+  - deploy
 
 variables:
   NODE_ENV: test
@@ -42,3 +43,14 @@ build:
     - docker build -t $DOCKER_USERNAME/hello-app:latest .
     - echo "Pushing image..."
     - docker push $DOCKER_USERNAME/hello-app:latest
+
+deploy:
+  image: bitnami/kubectl:latest
+  stage: deploy
+  script:
+    - export IMAGE_TAG=$CI_COMMIT_SHORT_SHA
+    - echo "Deploying image $IMAGE_TAG"
+
+    - sed -i "s|IMAGE_TAG|$IMAGE_TAG|g" deployment.yaml
+
+    - kubectl apply -f deployment.yaml
