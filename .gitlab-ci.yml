@@ -43,6 +43,10 @@ build:
     - docker build -t $DOCKER_USERNAME/hello-app:latest .
     - echo "Pushing image..."
     - docker push $DOCKER_USERNAME/hello-app:latest
+    - export IMAGE_TAG=$CI_COMMIT_SHORT_SHA
+    - echo "Building image with tag $IMAGE_TAG"
+    - docker build -t rahulrdev/hello-app:$IMAGE_TAG .
+    - docker push rahulrdev/hello-app:$IMAGE_TAG
 
 deploy:
   image: bitnami/kubectl:latest
