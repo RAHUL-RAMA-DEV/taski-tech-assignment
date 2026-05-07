@@ -1,14 +1,11 @@
-import js from "@eslint/js";
-import globals from "globals";
-import { defineConfig } from "eslint/config";
+const js = require("@eslint/js");
+const globals = require("globals");
 
-export default defineConfig([
-  // Base JS recommended rules
+module.exports = [
   js.configs.recommended,
 
-  // Node.js + Jest environment (your app)
   {
-    files: ["**/*.{js,mjs,cjs}"],
+    files: ["**/*.{js}"],
     languageOptions: {
       ecmaVersion: "latest",
       sourceType: "commonjs",
@@ -26,4 +23,4 @@ export default defineConfig([
       "no-undef": "error"
     }
   }
-]);
+];
