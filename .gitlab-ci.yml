@@ -63,5 +63,7 @@ deploy:
     # replace placeholder in deployment.yaml
     - sed -i "s|IMAGE_TAG|$IMAGE_TAG|g" deployment.yaml
 
+    - cat deployment.yaml
+    
     # apply kubernetes deployment
     - kubectl apply -f deployment.yaml
