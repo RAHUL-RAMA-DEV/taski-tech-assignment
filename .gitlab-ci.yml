@@ -57,8 +57,6 @@ deploy:
   image: bitnami/kubectl:latest
   stage: deploy
   script:
-    - echo "Deploying application..."
-    - ls -la
-    - cat deployment.yaml
+    - echo "Starting deployment"
     - kubectl version --client
     - kubectl apply -f deployment.yaml
