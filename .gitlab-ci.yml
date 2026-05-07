@@ -1,0 +1,38 @@
+stages:
+  - lint
+  - test
+  - integration
+  - build
+
+variables:
+  NODE_ENV: test
+
+before_script:
+  - npm install
+
+lint:
+  image: node:18
+  stage: lint
+  script:
+    - npm run lint
+
+unit_test:
+  image: node:18
+  stage: test
+  script:
+    - npm test
+
+integration_test:
+  image: node:18
+  stage: integration
+  script:
+    - echo "Running integration tests"
+    - npm test -- --detectOpenHandles
+
+build:
+  image: docker:latest
+  stage: build
+  services:
+    - docker:dind
+  script:
+    - docker build -t hello-app .
