@@ -5,15 +5,15 @@ module.exports = [
   js.configs.recommended,
 
   {
-    files: ["**/*.{js}"],
+    files: ["**/*.js"],
     languageOptions: {
       ecmaVersion: "latest",
       sourceType: "commonjs",
       globals: {
-        ...globals.node,
+        ...globals.node,   // FIX: require, module, console
         describe: "readonly",
-        it: "readonly",
         test: "readonly",
+        it: "readonly",
         expect: "readonly"
       }
     },
