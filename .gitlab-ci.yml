@@ -57,13 +57,8 @@ deploy:
   image: bitnami/kubectl:latest
   stage: deploy
   script:
-    - export IMAGE_TAG=$CI_COMMIT_SHORT_SHA
-    - echo "Deploying image $IMAGE_TAG"
-
-    # replace placeholder in deployment.yaml
-    - sed -i "s|IMAGE_TAG|$IMAGE_TAG|g" deployment.yaml
-
+    - echo "Deploying application..."
+    - ls -la
     - cat deployment.yaml
-    
-    # apply kubernetes deployment
+    - kubectl version --client
     - kubectl apply -f deployment.yaml
