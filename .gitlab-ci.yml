@@ -62,4 +62,6 @@ deploy:
     - chmod +x kubectl
     - mv kubectl /usr/local/bin/
     - kubectl version --client
+    - echo "$KUBECONFIG_CONTENT" > kubeconfig
+    - export KUBECONFIG=$PWD/kubeconfig
     - kubectl apply -f deployment.yaml
