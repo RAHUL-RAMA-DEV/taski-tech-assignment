@@ -52,6 +52,9 @@ build:
 deploy:
   image: alpine:latest
   stage: deploy
+  
+tags:
+  - local-runner
 
   script:
     - apk add --no-cache curl
