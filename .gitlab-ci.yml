@@ -29,7 +29,8 @@ integration_test:
   stage: integration
   script:
     - echo "Running integration tests"
-    - npm test -- --detectOpenHandles
+    - npm ci
+    - npx --no-install jest --detectOpenHandles
 
 build:
   image: docker:latest
