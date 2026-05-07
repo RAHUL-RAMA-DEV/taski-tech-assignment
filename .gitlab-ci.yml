@@ -36,3 +36,9 @@ build:
     - docker:dind
   script:
     - docker build -t hello-app .
+    - echo "Logging into Docker Hub..."
+    - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
+    - echo "Building image..."
+    - docker build -t $DOCKER_USERNAME/hello-app:latest .
+    - echo "Pushing image..."
+    - docker push $DOCKER_USERNAME/hello-app:latest
