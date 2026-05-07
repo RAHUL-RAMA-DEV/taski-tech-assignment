@@ -54,7 +54,7 @@ build:
 
 # ---------------- DEPLOY TO KUBERNETES ---------------
 deploy:
-  image: alpine:latest
+  image: bitnami/kubectl:latest
   stage: deploy
   script:
     - kubectl version --client
