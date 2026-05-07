@@ -57,5 +57,4 @@ deploy:
   image: alpine:latest
   stage: deploy
   script:
-    - echo "DEPLOY JOB IS RUNNING"
-    - ls
+    - kubectl version --client
