@@ -11,7 +11,7 @@
     "express": "^4.18.2"
   },
   "devDependencies": {
-    "@eslint/js": "^10.3.0",
+    "@eslint/js": "latest",
     "eslint": "^10.3.0",
     "globals": "^17.6.0",
     "jest": "^30.3.0",
