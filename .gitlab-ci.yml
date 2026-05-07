@@ -52,8 +52,8 @@ build:
     - docker build -t $DOCKER_USERNAME/hello-app:$IMAGE_TAG .
     - docker push $DOCKER_USERNAME/hello-app:$IMAGE_TAG
 
-# ---------------- DEPLOY TO KUBERNETES ----------------
- deploy:
+# ---------------- DEPLOY TO KUBERNETES ---------------
+deploy:
   image: bitnami/kubectl:latest
   stage: deploy
   script:
