@@ -21,7 +21,8 @@ unit_test:
   image: node:18
   stage: test
   script:
-    - npm test
+    - npm ci
+    - npx --no-install jest
 
 integration_test:
   image: node:18
