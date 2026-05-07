@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: hello-app
-          image: rahulrdev/hello-app:v1
+          image: rahulrdev/hello-app:IMAGE_TAG
           ports:
             - containerPort: 3000
