@@ -54,14 +54,8 @@ build:
 
 # ---------------- DEPLOY TO KUBERNETES ---------------
 deploy:
-  image: bitnami/kubectl:latest
+  image: alpine:latest
   stage: deploy
   script:
-    - echo "DEBUG START"
-    - whoami
-    - pwd
-    - ls -la
-    - echo "TEST KUBECTL"
-    - kubectl version --client
-    - echo "TRY APPLY"
-    - kubectl apply -f deployment.yaml
+    - echo "DEPLOY JOB IS RUNNING"
+    - ls
